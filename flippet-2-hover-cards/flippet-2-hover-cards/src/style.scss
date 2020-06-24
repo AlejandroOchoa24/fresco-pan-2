@@ -1,0 +1,161 @@
+/* The version of Bourbon used in this Pen was 4.* */
+@import "bourbon";
+
+ @import url(http://weloveiconfonts.com/api/?family=iconicfill);
+
+/* iconicfill */
+[class*="iconicfill-"]:before {
+  font-family: 'IconicFill', sans-serif;
+}
+
+
+$flippet-name:'basic-hover-cards'; 
+$x:4; //Number of cards
+
+
+$c-1:#344a5f;
+$c-2:#16a085;
+$c-3:#eff0f2;
+$c-4:lighten($c-2,5%);
+
+
+@mixin resetElm(){
+  margin:0;
+  padding:0;
+
+  /*if list*/
+  list-style:none;
+}
+@mixin size(){
+  width:200px;
+  height:150px;
+}
+
+@mixin images(){
+  @include size();
+  overflow:hidden;
+  float:left;  
+  display:block; 
+  margin:.5em;
+  padding:0;
+  img{
+  width:100%;
+  display:block;
+   
+  }
+  &:before{
+      content:'';
+      display:block;
+      width:200px;
+      height:150px;
+      background:transparent;
+      position:absolute;
+       margin-top:0px;
+       margin-left:0em;
+        @include transition(background .3s ease);
+
+    }
+  figcaption{
+    background:$c-2;
+    padding:.2em .5em 1em;
+    @include transition(transform .3s ease);
+    color:$c-3;
+    h3{
+      @include resetElm();
+      padding:.2em 0;
+      font-size:1.2em;
+    }
+  }
+}
+@mixin reveal($size){
+  @include transform(translateY(-$size));
+  @include transition(transform .3s ease);
+}
+
+/*==============================
+   Flippet Images hover cards
+==============================*/
+body{
+  background:$c-1;
+}
+
+.flippet[data-type*=#{$flippet-name}]{   
+  figure{
+    @include images();
+    font-family:"Myriad Pro", sans-serif;
+    font-weight:500;
+      figcaption{
+        width:100%;
+        .icon{top:0;
+          span{top:0}
+        }
+        span,a{
+        top:.5em;
+        position:relative;}
+        h3{
+          position:absolute;
+          text-align:center;
+          text-transform:uppercase;
+          width:211px;
+          margin:-10em -.5em; 
+          padding:0;
+          color:$c-4;
+          @include transition(margin .1s ease .1s,opacity .1s ease .15s);
+          opacity:0;
+        }
+        a{
+          padding:.2em .2em .1em;
+          background:$c-4;
+          color:$c-3;
+          text-decoration:none;
+          border-radius:2px;
+          &.icon{
+            float:right;
+            width:2.8em;
+            height:2.8em;
+            text-align:center;
+            margin:-.2em -.6em;
+            border-radius:0px;
+            span{
+              font-size:1.4em;
+              line-height:1.8;}
+          }
+        }
+      }
+    &:hover{
+      &:before{
+        background:rgba(0,0,0,.65);
+      }
+      figcaption{
+        @include reveal(100%);
+            h3{
+          margin-top:-5em;
+              opacity:1;
+              @include transition(margin .3s ease .3s,opacity .3s ease .35s);
+        }
+      }
+    }
+  }
+  #lightbox{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: rgba(black,.9);
+    z-index:999999999;
+top:0;left:0;
+    img{
+    position:fixed;
+    width:40%;
+    max-width:740px;
+    height:auto;
+    margin:auto;
+    left:0;
+    right:0;  
+    top:0;
+    bottom:0;
+      cursor:pointer;
+     // &:hover{display:none}
+  }
+  }
+}
+

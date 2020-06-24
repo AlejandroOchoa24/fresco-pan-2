@@ -1,0 +1,164 @@
+@import url(http://weloveiconfonts.com/api/?family=iconicfill);
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: .02em;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Myriad Pro;
+}
+
+/* iconicfill */
+[class*="iconicfill-"]:before {
+  font-family: 'IconicFill', sans-serif;
+}
+
+/*==============================
+   Flippet Images hover cards
+==============================*/
+body {
+  background: #344a5f;
+}
+
+.flippet[data-type*=basic-hover-cards] figure {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  float: left;
+  display: block;
+  margin: .5em;
+  padding: 0;
+  font-family: "Myriad Pro", sans-serif;
+  font-weight: 500;
+}
+.flippet[data-type*=basic-hover-cards] figure img {
+  width: 100%;
+  display: block;
+}
+.flippet[data-type*=basic-hover-cards] figure:before {
+  content: '';
+  display: block;
+  width: 200px;
+  height: 150px;
+  background: transparent;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 0em;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption {
+  background: #16a085;
+  padding: .2em .5em 1em;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  color: #eff0f2;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption h3 {
+  margin: 0;
+  padding: 0;
+  /*if list*/
+  list-style: none;
+  padding: .2em 0;
+  font-size: 1.2em;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption {
+  width: 100%;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption .icon {
+  top: 0;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption .icon span {
+  top: 0;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption span, .flippet[data-type*=basic-hover-cards] figure figcaption a {
+  top: .5em;
+  position: relative;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption h3 {
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  width: 211px;
+  margin: -10em -.5em;
+  padding: 0;
+  color: #19b698;
+  -webkit-transition: margin 0.1s ease 0.1s, opacity 0.1s ease 0.15s;
+  -moz-transition: margin 0.1s ease 0.1s, opacity 0.1s ease 0.15s;
+  transition: margin 0.1s ease 0.1s, opacity 0.1s ease 0.15s;
+  opacity: 0;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption a {
+  padding: .2em .2em .1em;
+  background: #19b698;
+  color: #eff0f2;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption a.icon {
+  float: right;
+  width: 2.8em;
+  height: 2.8em;
+  text-align: center;
+  margin: -.2em -.6em;
+  border-radius: 0px;
+}
+.flippet[data-type*=basic-hover-cards] figure figcaption a.icon span {
+  font-size: 1.4em;
+  line-height: 1.8;
+}
+.flippet[data-type*=basic-hover-cards] figure:hover:before {
+  background: rgba(0, 0, 0, 0.65);
+}
+.flippet[data-type*=basic-hover-cards] figure:hover figcaption {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+.flippet[data-type*=basic-hover-cards] figure:hover figcaption h3 {
+  margin-top: -5em;
+  opacity: 1;
+  -webkit-transition: margin 0.3s ease 0.3s, opacity 0.3s ease 0.35s;
+  -moz-transition: margin 0.3s ease 0.3s, opacity 0.3s ease 0.35s;
+  transition: margin 0.3s ease 0.3s, opacity 0.3s ease 0.35s;
+}
+.flippet[data-type*=basic-hover-cards] #lightbox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999999999;
+  top: 0;
+  left: 0;
+}
+.flippet[data-type*=basic-hover-cards] #lightbox img {
+  position: fixed;
+  width: 40%;
+  max-width: 740px;
+  height: auto;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
